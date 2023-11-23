@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import restaurant from "../../assets/images/italian_background.png";
 import { cores } from "../../Global";
 
 type Props = {
