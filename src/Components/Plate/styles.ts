@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { cores } from "../../Global";
 
-export const PizzaContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,12 +15,14 @@ export const PizzaContainer = styled.div`
   color: ${cores.bege};
 
   h2 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 900;
   }
 
   p {
     font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
   }
 `;
 

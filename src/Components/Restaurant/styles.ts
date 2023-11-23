@@ -6,7 +6,7 @@ type Props = {
   destaque?: boolean;
 };
 
-export const RestaurantContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -14,34 +14,40 @@ export const RestaurantContainer = styled.div`
   width: 472px;
   height: 398px;
   font-weight: 700;
+  border: 1px solid ${cores.vermelho};
 
   color: ${cores.vermelho};
   background-color: ${cores.branco};
 `;
 
-export const RestaurantTitle = styled.div`
+export const Title = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   padding: 8px;
-  font-size: 18px;
+
+  h2 {
+    font-size: 18px;
+  }
 
   span {
     display: flex;
     align-items: center;
+    font-size: 18px;
 
     gap: 8px;
   }
 `;
 
-export const RestaurantInfo = styled.p`
+export const Info = styled.p`
   padding: 8px;
   font-size: 14px;
   font-weight: 400;
+  line-height: 22px;
 `;
 
-export const RestaurantButton = styled(Link)`
+export const Button = styled(Link)`
   border: none;
   display: flex;
   align-items: center;
@@ -58,7 +64,7 @@ export const RestaurantButton = styled(Link)`
   background-color: ${cores.vermelho};
 `;
 
-export const RestaurantTagContainer = styled.div<Props>`
+export const TagContainer = styled.div<Props>`
   display: flex;
   position: absolute;
 
@@ -67,7 +73,7 @@ export const RestaurantTagContainer = styled.div<Props>`
   gap: 8px;
 `;
 
-export const RestaurantTag = styled.span`
+export const Tag = styled.span`
   display: flex;
   align-items: center;
 

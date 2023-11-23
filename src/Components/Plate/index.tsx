@@ -1,16 +1,16 @@
 import Pizza from "../../assets/images/pizza_marguerita.png";
-import { Button, PizzaContainer } from "./styles";
+import * as S from "./styles";
 
 const Plates = () => (
-  <PizzaContainer>
+  <S.Container>
     <img src={Pizza} alt="Pizza" />
     <h2>Pizza Marguerita</h2>
     <p>
       A clássica Marguerita: molho de tomate suculento, mussarela derretida,
       manjericão fresco e um toque de azeite. Sabor e simplicidade!
     </p>
-    <Button>Adicionar ao carrinho</Button>
-  </PizzaContainer>
+    <S.Button>Adicionar ao carrinho</S.Button>
+  </S.Container>
 );
 
 export default Plates;

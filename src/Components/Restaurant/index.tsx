@@ -1,11 +1,4 @@
-import {
-  RestaurantButton,
-  RestaurantContainer,
-  RestaurantInfo,
-  RestaurantTag,
-  RestaurantTagContainer,
-  RestaurantTitle,
-} from "./styles";
+import * as S from "./styles";
 
 import Estrela from "../../assets/images/estrela.png";
 
@@ -28,23 +21,23 @@ const Restaurant = ({
   info,
   link,
 }: Props) => (
-  <RestaurantContainer>
+  <S.Container>
     <img src={imagem} alt={nome} />
-    <RestaurantTitle>
+    <S.Title>
       <h2>{nome}</h2>
       <span>
         {nota}
         <img src={Estrela} alt="Nota do restaurante" />
       </span>
-    </RestaurantTitle>
-    <RestaurantInfo>{info}</RestaurantInfo>
-    <RestaurantButton to={link}>Saiba mais</RestaurantButton>
+    </S.Title>
+    <S.Info>{info}</S.Info>
+    <S.Button to={link}>Saiba mais</S.Button>
 
-    <RestaurantTagContainer destaque={destaque}>
-      {destaque ? <RestaurantTag>Destaque da semana</RestaurantTag> : ""}
-      <RestaurantTag>{categoria}</RestaurantTag>
-    </RestaurantTagContainer>
-  </RestaurantContainer>
+    <S.TagContainer destaque={destaque}>
+      {destaque ? <S.Tag>Destaque da semana</S.Tag> : ""}
+      <S.Tag>{categoria}</S.Tag>
+    </S.TagContainer>
+  </S.Container>
 );
 
 export default Restaurant;

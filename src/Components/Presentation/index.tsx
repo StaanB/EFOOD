@@ -2,9 +2,10 @@ import { ItalianBanner } from "./styles";
 
 const Presentation = () => (
   <ItalianBanner>
-    <span>Italiana</span>
-
-    <h1>La Dolce Vita Trattoria</h1>
+    <div className="container">
+      <span>Italiana</span>
+      <h1>La Dolce Vita Trattoria</h1>
+    </div>
   </ItalianBanner>
 );
 

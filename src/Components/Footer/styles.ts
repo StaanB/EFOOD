@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { cores } from "../../Global";
 
-export const FooterContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +14,7 @@ export const FooterContainer = styled.div`
   margin-top: 120px;
 `;
 
-export const LogoSocialDiv = styled.div`
+export const Div = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@ export const LogoSocialDiv = styled.div`
   }
 `;
 
-export const FooterCopy = styled.p`
+export const Copy = styled.p`
   text-align: center;
 
   font-size: 10px;

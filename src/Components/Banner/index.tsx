@@ -1,11 +1,11 @@
-import { BannerDiv, BannerH1 } from "./styles"
+import * as S from './styles'
 import logo from '../../assets/images/logo.svg'
 
 const Banner = () => (
-    <BannerDiv>
+    <S.Banner>
         <img src={logo} alt="Efood Logo"/>
-        <BannerH1>Viva experiências gastronômicas no conforto da sua casa</BannerH1>
-    </BannerDiv>
+        <S.H1>Viva experiências gastronômicas no conforto da sua casa</S.H1>
+    </S.Banner>
 )
 
 export default Banner

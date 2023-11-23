@@ -3,10 +3,6 @@ import restaurant from "../../assets/images/italian_background.png";
 import { cores } from "../../Global";
 
 export const ItalianBanner = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-around;
 
   height: 280px;
   font-size: 32px;
@@ -16,13 +12,26 @@ export const ItalianBanner = styled.div`
   background-image: url(${restaurant});
   background-size: cover;
 
-  span,
-  h1 {
-    margin-left: 170px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: start;
+
+    height: 100%;
+    
     color: ${cores.branco};
   }
-
+  
   span {
     font-weight: 100;
+    margin-top: 24px;
+    font-size: 32px;
+  }
+  
+  h1{
+    margin-bottom: 32px;
+    font-size: 32px;
   }
 `;
