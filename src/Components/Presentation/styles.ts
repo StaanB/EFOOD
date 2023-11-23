@@ -2,14 +2,18 @@ import styled from "styled-components";
 import restaurant from "../../assets/images/italian_background.png";
 import { cores } from "../../Global";
 
-export const ItalianBanner = styled.div`
+type Props = {
+  imagem: string
+}
+
+export const ItalianBanner = styled.div<Props>`
 
   height: 280px;
   font-size: 32px;
   margin-bottom: 80px;
   font-weight: 900;
 
-  background-image: url(${restaurant});
+  background-image: url(${(props) => props.imagem});
   background-size: cover;
 
   div {

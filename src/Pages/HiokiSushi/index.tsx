@@ -3,18 +3,18 @@ import PlatesList from "../../Components/PlatesList";
 import Presentation from "../../Components/Presentation";
 
 import { Restaurants } from "../Home";
-import LadDolceImage from "../../assets/images/italian_background.png";
+import HiokiBackground from "../../assets/images/hioki_background.png";
 
-const LaDolceVita = () => (
+const HiokiSushi = () => (
   <>
     <Header />
     <Presentation
-      categoria={Restaurants[3].categoria}
-      nome={Restaurants[3].nome}
-      imagem={LadDolceImage}
+      categoria={Restaurants[0].categoria}
+      nome={Restaurants[0].nome}
+      imagem={HiokiBackground}
     />
     <PlatesList />
   </>
 );
 
-export default LaDolceVita;
+export default HiokiSushi;

@@ -1,10 +1,16 @@
 import { ItalianBanner } from "./styles";
 
-const Presentation = () => (
-  <ItalianBanner>
+type Props = {
+  categoria: string
+  nome: string
+  imagem: string
+}
+
+const Presentation = ({categoria, nome, imagem}: Props) => (
+  <ItalianBanner imagem={imagem}>
     <div className="container">
-      <span>Italiana</span>
-      <h1>La Dolce Vita Trattoria</h1>
+      <span>{categoria}</span>
+      <h1>{nome}</h1>
     </div>
   </ItalianBanner>
 );

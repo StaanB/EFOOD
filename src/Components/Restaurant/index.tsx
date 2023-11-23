@@ -22,7 +22,7 @@ const Restaurant = ({
   link,
 }: Props) => (
   <S.Container>
-    <img src={imagem} alt={nome} />
+    <S.Imagem src={imagem} alt={nome} />
     <S.Title>
       <h2>{nome}</h2>
       <span>

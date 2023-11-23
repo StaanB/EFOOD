@@ -20,6 +20,11 @@ export const Container = styled.div`
   background-color: ${cores.branco};
 `;
 
+export const Imagem = styled.img`
+  height: 217px;
+  object-fit: cover;
+`
+
 export const Title = styled.div`
   display: flex;
   align-items: center;

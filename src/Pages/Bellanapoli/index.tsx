@@ -3,18 +3,18 @@ import PlatesList from "../../Components/PlatesList";
 import Presentation from "../../Components/Presentation";
 
 import { Restaurants } from "../Home";
-import LadDolceImage from "../../assets/images/italian_background.png";
+import BellanapoliImage from "../../assets/images/bella_napoli_background.png";
 
-const LaDolceVita = () => (
+const BellaNapoli = () => (
   <>
     <Header />
     <Presentation
-      categoria={Restaurants[3].categoria}
-      nome={Restaurants[3].nome}
-      imagem={LadDolceImage}
+      categoria={Restaurants[5].categoria}
+      nome={Restaurants[5].nome}
+      imagem={BellanapoliImage}
     />
     <PlatesList />
   </>
 );
 
-export default LaDolceVita;
+export default BellaNapoli;
