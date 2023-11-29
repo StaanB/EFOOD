@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { cores } from "../../Global";
 
 type Props = {
-  imagem: string
-}
+  imagem: string;
+};
 
 export const ItalianBanner = styled.div<Props>`
-
+  position: relative;
   height: 280px;
   font-size: 32px;
   margin-bottom: 80px;
@@ -23,17 +23,17 @@ export const ItalianBanner = styled.div<Props>`
     text-align: start;
 
     height: 100%;
-    
+
     color: ${cores.branco};
   }
-  
+
   span {
     font-weight: 100;
     margin-top: 24px;
     font-size: 32px;
   }
-  
-  h1{
+
+  h1 {
     margin-bottom: 32px;
     font-size: 32px;
   }

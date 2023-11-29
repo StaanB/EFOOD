@@ -14,6 +14,12 @@ export const Container = styled.div`
   background-color: ${cores.vermelho};
   color: ${cores.bege};
 
+  img {
+    width: 304px;
+    height: 167px;
+    object-fit: cover;
+  }
+
   h2 {
     font-size: 16px;
     font-weight: 900;
@@ -37,3 +43,4 @@ export const Button = styled.button`
   color: ${cores.vermelho};
   background-color: ${cores.bege};
 `;
+

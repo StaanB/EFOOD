@@ -74,7 +74,7 @@ export const TagContainer = styled.div<Props>`
   position: absolute;
 
   top: 16px;
-  left: ${(props) => (props.destaque ? "230px" : "390px")};
+  left: ${(props) => (props.destaque ? "230px" : "380px")};
   gap: 8px;
 `;
 
