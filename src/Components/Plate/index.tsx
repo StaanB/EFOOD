@@ -7,9 +7,11 @@ type Props = {
   nome: string;
   descricao: string;
   porcao: string;
+  onclick: () => void
 };
 
-const Plates = ({ foto, nome, descricao }: Props) => {
+const Plates = ({ foto, nome, descricao, onclick}: Props) => {
+  
 
   const retornaDescricaoPrato = (descricao: string) => {
     if (descricao.length > 123) {
@@ -23,7 +25,9 @@ const Plates = ({ foto, nome, descricao }: Props) => {
         <img src={foto} alt={nome} />
         <h2>{nome}</h2>
         <p>{retornaDescricaoPrato(descricao)}</p>
-        <S.Button>Mais detalhes</S.Button>
+        <S.Button onClick={onclick}>
+          Mais detalhes
+        </S.Button>
       </S.Container>
     </>
   );
