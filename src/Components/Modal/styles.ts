@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../Global";
+import { breakpoints, cores } from "../../Global";
 
 export const Modal = styled.div`
   position: fixed;
@@ -37,6 +37,16 @@ export const ModalContent = styled.div`
   height: 344px;
   z-index: 1;
 
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 768px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 324px;
+    height: 560px;
+    flex-direction: column;
+  }
+
   button {
     border: none;
     img {
@@ -46,6 +56,14 @@ export const ModalContent = styled.div`
       width: 16px;
       height: 16px;
       cursor: pointer;
+
+      @media (max-width: ${breakpoints.desktop}) {
+        top: 24px;
+      }
+
+      @media (max-width: ${breakpoints.tablet}) {
+        top: -24px;
+      }
     }
   }
 
@@ -54,6 +72,10 @@ export const ModalContent = styled.div`
     height: 280px;
     margin: 0 32px;
     object-fit: cover;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      margin-top: 40px;
+    }
   }
 
   div {
@@ -65,16 +87,36 @@ export const ModalContent = styled.div`
       font-size: 18px;
       margin-top: 32px;
       margin-bottom: 16px;
+
+      @media (max-width: ${breakpoints.tablet}) {
+        margin-left: 8px;
+        align-self: center;
+      }
     }
 
     p {
       width: 656px;
       font-size: 14px;
+
+      @media (max-width: ${breakpoints.desktop}) {
+        width: 372px;
+      }
+
+      @media (max-width: ${breakpoints.tablet}) {
+        width: 90%;
+        margin-left: 8px;
+        align-self: center;
+      }
     }
 
     button {
       width: 218px;
       margin-top: 20px;
+
+      @media (max-width: ${breakpoints.tablet}) {
+        width: 80%;
+        align-self: center;
+      }
     }
   }
 

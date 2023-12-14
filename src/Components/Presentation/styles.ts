@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../Global";
+import { breakpoints, cores } from "../../Global";
 
 type Props = {
   imagem: string;
@@ -14,6 +14,10 @@ export const ItalianBanner = styled.div<Props>`
 
   background-image: url(${(props) => props.imagem});
   background-size: cover;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    padding: 24px;
+  }
 
   div {
     display: flex;

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import fundo from "../../assets/images/fundo.png";
-import { cores } from "../../Global";
+import { breakpoints, cores } from "../../Global";
 
 export const Container = styled.div`
   display: flex;
@@ -15,10 +15,23 @@ export const Container = styled.div`
   background-size: cover;
   color: ${cores.vermelho};
 
+  @media (max-width: ${breakpoints.desktop}) {
+    padding: 24px;
+  }
+
   div {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  p {
+    cursor: pointer;
   }
 `;
 

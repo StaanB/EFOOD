@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../Global";
+import { breakpoints, cores } from "../../Global";
 import { Link } from "react-router-dom";
 
 type Props = {
@@ -18,6 +18,10 @@ export const Container = styled.div`
 
   color: ${cores.vermelho};
   background-color: ${cores.branco};
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 372px;
+  }
 `;
 
 export const Imagem = styled.img`
@@ -76,6 +80,10 @@ export const TagContainer = styled.div<Props>`
   top: 16px;
   left: ${(props) => (props.destaque ? "230px" : "380px")};
   gap: 8px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    left: ${(props) => (props.destaque ? "50px" : "280px")};
+  }
 `;
 
 export const Tag = styled.span`

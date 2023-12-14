@@ -24,8 +24,7 @@ export interface modalType {
   descricao: string;
   porcao: string;
   visivel: boolean;
-};
-
+}
 
 const PlatesList = ({ plates }: Props) => {
   const [modal, setModal] = useState<modalType>({
@@ -37,6 +36,8 @@ const PlatesList = ({ plates }: Props) => {
     preco: 0,
     visivel: false,
   });
+
+  const [plate, setPlate] = useState({})
 
   return (
     <>
@@ -50,13 +51,18 @@ const PlatesList = ({ plates }: Props) => {
             nome={plate.nome}
             porcao={plate.porcao}
             preco={plate.preco}
-            onclick={() => {setModal({id: plate.id,
-              descricao: plate.descricao,
-              foto: plate.foto,
-              nome: plate.nome,
-              porcao: plate.porcao,
-              preco: plate.preco,
-              visivel: true,})}}
+            onclick={() => {
+              setModal({
+                id: plate.id,
+                descricao: plate.descricao,
+                foto: plate.foto,
+                nome: plate.nome,
+                porcao: plate.porcao,
+                preco: plate.preco,
+                visivel: true,
+              });
+              setPlate(plate)
+            }}
           />
         ))}
       </PlatesListContainer>
@@ -70,6 +76,7 @@ const PlatesList = ({ plates }: Props) => {
         key={modal.id}
         visivel={modal.visivel}
         setModal={setModal}
+        plate={plate}
       />
     </>
   );
