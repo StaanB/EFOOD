@@ -11,7 +11,7 @@ import botaoFechar from "../../assets/images/botao_fechar.png";
 
 interface Props extends modalType {
   setModal: Dispatch<modalType>;
-  plate: Object;
+  plate: any;
 }
 export const formataPreco = (number = 0) => {
   return new Intl.NumberFormat("pt-BR", {
