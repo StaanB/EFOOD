@@ -22,6 +22,10 @@ export const Container = styled.div`
   @media (max-width: ${breakpoints.desktop}) {
     width: 372px;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 340px;
+  }
 `;
 
 export const Imagem = styled.img`
@@ -82,7 +86,7 @@ export const TagContainer = styled.div<Props>`
   gap: 8px;
 
   @media (max-width: ${breakpoints.desktop}) {
-    left: ${(props) => (props.destaque ? "50px" : "280px")};
+    left: ${(props) => (props.destaque ? "110px" : "260px")};
   }
 `;
 
