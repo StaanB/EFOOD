@@ -1,10 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootReducer } from "../../store";
 import { closeCart, openAddress, remove } from "../../store/reducers/cart";
+import { formataPreco } from "../../utils";
 
 import * as S from "./styles";
-
-import { formataPreco } from "../Modal";
 
 const Cart = () => {
   const { cartIsOpen, items } = useSelector((state: RootReducer) => state.cart);

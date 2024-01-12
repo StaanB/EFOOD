@@ -5,12 +5,13 @@ import InputMask from "react-input-mask";
 
 import { RootReducer } from "../../store";
 import { usePurchaseMutation } from "../../services/api";
+import { formataPreco } from "../../utils";
 import {
   openAddress,
   closePaymemt,
   addCardInfos,
 } from "../../store/reducers/cart";
-import { formataPreco } from "../Modal";
+
 
 import { Aside, Button, Overlay } from "../Cart/styles";
 import * as S from "./styles";

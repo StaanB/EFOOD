@@ -8,17 +8,21 @@ import { Button } from "../Plate/styles";
 import { modalType } from "../PlatesList";
 
 import botaoFechar from "../../assets/images/botao_fechar.png";
+import { formataPreco } from "../../utils";
+
+type plateProps = {
+  descricao: string;
+  foto: string;
+  id: number;
+  nome: string;
+  porcao: string;
+  preco: number;
+};
 
 interface Props extends modalType {
   setModal: Dispatch<modalType>;
-  plate: any;
+  plate: plateProps;
 }
-export const formataPreco = (number = 0) => {
-  return new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(number);
-};
 
 const Modal = ({
   id,
