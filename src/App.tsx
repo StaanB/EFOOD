@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import Footer from "./Components/Footer";
@@ -19,6 +20,7 @@ function App() {
         <Cart />
         <Checkout />
         <Payment />
+        <Analytics />
       </BrowserRouter>
     </Provider>
   );
