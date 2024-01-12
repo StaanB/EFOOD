@@ -33,3 +33,6 @@ export const GlobalCSS = createGlobalStyle`
         margin: 0 auto;
     }
 `
+
+
+

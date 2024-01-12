@@ -13,33 +13,8 @@ export const Container = styled.div`
   display: none;
   justify-content: flex-end;
 
-  &.is-open {
+  &.cart-is-open {
     display: flex;
-  }
-`;
-
-export const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.7;
-  width: 100%;
-  height: 100%;
-
-  background-color: #000;
-`;
-
-export const Aside = styled.aside`
-  max-width: 360px;
-  padding: 32px 8px;
-
-  width: 100%;
-  z-index: 1;
-
-  background-color: ${cores.vermelho};
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 300px;
   }
 `;
 
@@ -60,7 +35,7 @@ export const CartItem = styled.li`
   @media (max-width: ${breakpoints.tablet}) {
     width: 280px;
   }
-  
+
   img {
     width: 80px;
     height: 80px;
@@ -93,6 +68,57 @@ export const CartItem = styled.li`
     background-color: transparent;
   }
 `;
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+
+  background-color: #000;
+`;
+
+export const Aside = styled.aside`
+  max-width: 360px;
+  padding: 32px 8px;
+
+  width: 100%;
+  z-index: 1;
+
+  background-color: ${cores.vermelho};
+  
+  .message-cart-div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .message-cart {
+    font-size: 16px;
+    color: ${cores.bege};
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 300px;
+  }
+`;
+
+export const Preco = styled.h3`
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 40px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 700;
+
+  color: ${cores.bege};
+`;
 
 export const Button = styled.button`
   width: 100%;
@@ -106,15 +132,4 @@ export const Button = styled.button`
 
   border: none;
   cursor: pointer;
-`;
-export const Preco = styled.h3`
-  display: flex;
-  justify-content: space-between;
-
-  margin-top: 40px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  font-weight: 700;
-
-  color: ${cores.bege};
 `;

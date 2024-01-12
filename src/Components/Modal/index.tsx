@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Dispatch } from "react";
 
-import { add, open } from "../../store/reducers/cart";
+import { add, openCart } from "../../store/reducers/cart";
 
 import * as S from "./styles";
 import { Button } from "../Plate/styles";
@@ -44,7 +44,7 @@ const Modal = ({
       preco: 0,
       visivel: false,
     });
-    dispatch(open());
+    dispatch(openCart());
   };
 
   return (

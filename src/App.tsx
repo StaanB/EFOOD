@@ -1,10 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
-import Rotas from "./routes";
-import { GlobalCSS } from "./Global";
-import Footer from "./Components/Footer";
 import { Provider } from "react-redux";
+import Footer from "./Components/Footer";
 import { store } from "./store";
+
+import Rotas from "./routes";
+import Checkout from "./Components/Checkout";
 import Cart from "./Components/Cart";
+import { GlobalCSS } from "./Global";
+import Payment from "./Components/Payment";
 
 function App() {
   return (
@@ -14,6 +17,8 @@ function App() {
         <Rotas />
         <Footer />
         <Cart />
+        <Checkout />
+        <Payment />
       </BrowserRouter>
     </Provider>
   );
