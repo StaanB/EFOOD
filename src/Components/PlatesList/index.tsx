@@ -1,6 +1,8 @@
 import { useState } from "react";
+
 import Modal from "../Modal";
 import Plate from "../Plate";
+
 import { PlatesListContainer } from "./styles";
 
 type Props = {

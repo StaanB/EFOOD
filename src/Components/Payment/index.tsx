@@ -10,14 +10,14 @@ import {
   openAddress,
   closePaymemt,
   addCardInfos,
+  clear,
 } from "../../store/reducers/cart";
-
 
 import { Aside, Button, Overlay } from "../Cart/styles";
 import * as S from "./styles";
 
 const Payment = () => {
-  const [purchase] = usePurchaseMutation();
+  const [purchase, { isSuccess, data }] = usePurchaseMutation();
   const { paymentOpen, items, clientAddress, clientCard } = useSelector(
     (state: RootReducer) => state.cart
   );
@@ -25,6 +25,11 @@ const Payment = () => {
 
   const backToPayment = () => {
     dispatch(openAddress());
+    dispatch(closePaymemt());
+  };
+
+  const endPurchase = () => {
+    dispatch(clear());
     dispatch(closePaymemt());
   };
 
@@ -69,7 +74,7 @@ const Payment = () => {
       purchase({
         products: clientAddress.products,
         delivery: clientAddress.delivery,
-        payment: clientCard.payment
+        payment: clientCard.payment,
       });
     },
   });
@@ -91,99 +96,137 @@ const Payment = () => {
       <S.Container className={paymentOpen ? "payment-is-open" : ""}>
         <Overlay />
         <Aside>
-          <h3>Pagamento - Valor a pagar {formataPreco(getTotalPrice())}</h3>
+          {isSuccess ? (
+            <>
+              <h3>Pedido realizado - {data?.orderId}</h3>
+              <p>
+                Estamos felizes em informar que seu pedido já está em processo
+                de preparação e, em breve, será entregue no endereço fornecido.
+              </p>
+              <p>
+                Gostaríamos de ressaltar que nossos entregadores não estão
+                autorizados a realizar cobranças extras
+              </p>
+              <p>
+                Lembre-se da importância de higienizar as mãos após o
+                recebimento do pedido, garantindo assim sua segurança e
+                bem-estar durante a refeição.
+              </p>
+              <p>
+                Esperamos que desfrute de uma deliciosa e agradável experiência
+                gastronômica. Bom apetite!
+              </p>
+              <Button
+                title="Concluir compra"
+                type="button"
+                onClick={endPurchase}
+              >
+                Concluir
+              </Button>
+            </>
+          ) : (
+            <>
+              <h3>Pagamento - Valor a pagar {formataPreco(getTotalPrice())}</h3>
 
-          <S.Row>
-            <label htmlFor="cardName">Nome no cartão</label>
-            <input
-              name="cardName"
-              id="cardName"
-              type="text"
-              value={form.values.cardName}
-              onChange={form.handleChange}
-              onBlur={form.handleBlur}
-              className={checkInputHasError("cardName") ? "has-error" : ""}
-            />
-          </S.Row>
+              <S.Row>
+                <label htmlFor="cardName">Nome no cartão</label>
+                <input
+                  name="cardName"
+                  id="cardName"
+                  type="text"
+                  value={form.values.cardName}
+                  onChange={form.handleChange}
+                  onBlur={form.handleBlur}
+                  className={checkInputHasError("cardName") ? "has-error" : ""}
+                />
+              </S.Row>
 
-          <S.Row className="mid-size">
-            <div>
-              <label htmlFor="cardNumber">Número no cartão</label>
-              <InputMask
-                name="cardNumber"
-                id="cardNumber"
-                type="text"
-                style={{ width: 228 }}
-                value={form.values.cardNumber}
-                onChange={form.handleChange}
-                onBlur={form.handleBlur}
-                className={checkInputHasError("cardNumber") ? "has-error" : ""}
-                mask="9999 9999 9999 9999"
-              />
-            </div>
-            <div>
-              <label htmlFor="cardCode">CVV</label>
-              <InputMask
-                name="cardCode"
-                id="cardCode"
-                type="text"
-                style={{ width: 87 }}
-                value={form.values.cardCode}
-                onChange={form.handleChange}
-                onBlur={form.handleBlur}
-                className={checkInputHasError("cardCode") ? "has-error" : ""}
-                mask="999"
-              />
-            </div>
-          </S.Row>
+              <S.Row className="mid-size">
+                <div>
+                  <label htmlFor="cardNumber">Número no cartão</label>
+                  <InputMask
+                    name="cardNumber"
+                    id="cardNumber"
+                    type="text"
+                    style={{ width: 228 }}
+                    value={form.values.cardNumber}
+                    onChange={form.handleChange}
+                    onBlur={form.handleBlur}
+                    className={
+                      checkInputHasError("cardNumber") ? "has-error" : ""
+                    }
+                    mask="9999 9999 9999 9999"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="cardCode">CVV</label>
+                  <InputMask
+                    name="cardCode"
+                    id="cardCode"
+                    type="text"
+                    style={{ width: 87 }}
+                    value={form.values.cardCode}
+                    onChange={form.handleChange}
+                    onBlur={form.handleBlur}
+                    className={
+                      checkInputHasError("cardCode") ? "has-error" : ""
+                    }
+                    mask="999"
+                  />
+                </div>
+              </S.Row>
 
-          <S.Row className="mid-size">
-            <div>
-              <label htmlFor="expiresMonth">Mês de vencimento</label>
-              <InputMask
-                name="expiresMonth"
-                id="expiresMonth"
-                type="text"
-                value={form.values.expiresMonth}
-                onChange={form.handleChange}
-                onBlur={form.handleBlur}
-                className={
-                  checkInputHasError("expiresMonth") ? "has-error" : ""
-                }
-                mask="99"
-              />
-            </div>
-            <div>
-              <label htmlFor="expiresYear">Ano de vencimento</label>
-              <InputMask
-                name="expiresYear"
-                id="expiresYear"
-                type="text"
-                value={form.values.expiresYear}
-                onChange={form.handleChange}
-                onBlur={form.handleBlur}
-                className={checkInputHasError("expiresYear") ? "has-error" : ""}
-                mask="99"
-              />
-            </div>
-          </S.Row>
+              <S.Row className="mid-size">
+                <div>
+                  <label htmlFor="expiresMonth">Mês de vencimento</label>
+                  <InputMask
+                    name="expiresMonth"
+                    id="expiresMonth"
+                    type="text"
+                    value={form.values.expiresMonth}
+                    onChange={form.handleChange}
+                    onBlur={form.handleBlur}
+                    className={
+                      checkInputHasError("expiresMonth") ? "has-error" : ""
+                    }
+                    mask="99"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="expiresYear">Ano de vencimento</label>
+                  <InputMask
+                    name="expiresYear"
+                    id="expiresYear"
+                    type="text"
+                    value={form.values.expiresYear}
+                    onChange={form.handleChange}
+                    onBlur={form.handleBlur}
+                    className={
+                      checkInputHasError("expiresYear") ? "has-error" : ""
+                    }
+                    mask="99"
+                  />
+                </div>
+              </S.Row>
 
-          <Button
-            onClick={handleSendTicket}
-            disabled={!form.isValid}
-            title="Continuar com a compra"
-            type="submit"
-            className="payment-button"
-          >
-            Finalizar pagamento
-          </Button>
-          <Button
-            title="Voltar para o carrinho"
-            type="button"
-            onClick={backToPayment}
-          >
-            Voltar para a edição de endereço
-          </Button>
+              <Button
+                onClick={handleSendTicket}
+                disabled={!form.isValid}
+                title="Continuar com a compra"
+                type="submit"
+                className="payment-button"
+              >
+                Finalizar pagamento
+              </Button>
+              <Button
+                title="Voltar para o carrinho"
+                type="button"
+                onClick={backToPayment}
+              >
+                Voltar para a edição de endereço
+              </Button>
+            </>
+          )}
         </Aside>
       </S.Container>
     </form>

@@ -15,7 +15,6 @@ export const Container = styled.div`
   &.payment-is-open {
     display: flex;
   }
-  
 
   h3 {
     font-size: 16px;
@@ -24,12 +23,19 @@ export const Container = styled.div`
     font-weight: 700;
   }
 
-  .payment-button{
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    color: ${cores.bege};
+    margin-bottom: 16px;
+  }
+
+  .payment-button {
     margin-top: 24px;
     margin-bottom: 8px;
   }
 
-  .has-error{
+  .has-error {
     border: 3px solid red;
     color: red;
   }

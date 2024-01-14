@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
+
 import Header from "../../Components/Header";
+import ClockSpinner from "../../Components/ClockSpinner";
 import Presentation from "../../Components/Presentation";
 import PlatesList from "../../Components/PlatesList";
+
 import { useGetRestaurantByIdQuery } from "../../services/api";
 
 const RestaurantPage = () => {
@@ -9,7 +12,12 @@ const RestaurantPage = () => {
   const { data: restaurant } = useGetRestaurantByIdQuery(id!);
 
   if (!restaurant) {
-    return <h3>Carregando</h3>;
+    return (
+      <>
+        <Header />
+        <ClockSpinner />
+      </>
+    );
   }
 
   return (

@@ -1,5 +1,6 @@
 import { restaurantsType } from "../../Pages/Home";
 import Restaurant from "../Restaurant";
+
 import { List } from "./style";
 
 type Props = {

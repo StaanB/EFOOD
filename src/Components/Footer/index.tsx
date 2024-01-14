@@ -1,10 +1,9 @@
-import * as S from "./styles";
-
 import logo from "../../assets/images//logo.svg";
 import instagram from "../../assets/images/instagram.png";
 import facebook from "../../assets/images/facebook.png";
 import twitter from "../../assets/images/twitter.png";
 
+import * as S from "./styles";
 const Footer = () => (
   <S.Container>
     <S.Div>

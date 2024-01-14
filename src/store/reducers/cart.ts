@@ -104,6 +104,10 @@ const cartSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
 
+    clear: (state) => {
+      state.items = [];
+    },
+
     openCart: (state) => {
       state.cartIsOpen = true;
     },
@@ -125,13 +129,6 @@ const cartSlice = createSlice({
     closePaymemt: (state) => {
       state.paymentOpen = false;
     },
-    openThanks: (state) => {
-      state.thanksOpen = true;
-    },
-
-    closeThanks: (state) => {
-      state.thanksOpen = false;
-    },
 
     addAddressInfos: (state, action: PayloadAction<clientAddres>) => {
       state.clientAddress = action.payload;
@@ -147,14 +144,15 @@ const cartSlice = createSlice({
 export const {
   add,
   remove,
+  clear,
+
   openCart,
   closeCart,
   openAddress,
   closeAddress,
   openPaymemt,
   closePaymemt,
-  openThanks,
-  closeThanks,
+
   addAddressInfos,
   addCardInfos,
 } = cartSlice.actions;
