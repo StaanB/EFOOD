@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../Global";
+import { breakpoints, cores } from "../../Global";
 
 export const Container = styled.div`
   position: fixed;
@@ -69,11 +69,23 @@ export const Row = styled.div`
       input {
         width: 155px;
         margin-top: 8px;
+
+        @media (max-width: ${breakpoints.tablet}) {
+          width: 128px;
+        }
       }
     }
   }
 
-  &.card-number {
+  #cardNumber {
     width: 228px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 168px;
+    }
+  }
+
+  #cardCode{
+    width: 84px;
   }
 `;

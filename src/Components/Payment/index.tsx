@@ -158,7 +158,6 @@ const Payment = () => {
                     name="cardNumber"
                     id="cardNumber"
                     type="text"
-                    style={{ width: 228 }}
                     value={form.values.cardNumber}
                     onChange={form.handleChange}
                     onBlur={form.handleBlur}
@@ -174,7 +173,6 @@ const Payment = () => {
                     name="cardCode"
                     id="cardCode"
                     type="text"
-                    style={{ width: 87 }}
                     value={form.values.cardCode}
                     onChange={form.handleChange}
                     onBlur={form.handleBlur}

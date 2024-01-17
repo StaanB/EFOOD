@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../Global";
+import { breakpoints, cores } from "../../Global";
 
 export const Container = styled.div`
   position: fixed;
@@ -15,7 +15,6 @@ export const Container = styled.div`
   &.address-is-open {
     display: flex;
   }
-  
 
   h3 {
     font-size: 16px;
@@ -24,12 +23,12 @@ export const Container = styled.div`
     font-weight: 700;
   }
 
-  .payment-button{
+  .payment-button {
     margin-top: 24px;
     margin-bottom: 8px;
   }
 
-  .has-error{
+  .has-error {
     border: 3px solid red;
     color: red;
   }
@@ -63,6 +62,10 @@ export const Row = styled.div`
       input {
         width: 155px;
         margin-top: 8px;
+
+        @media (max-width: ${breakpoints.tablet}) {
+          width: 124px;
+        }
       }
     }
   }
