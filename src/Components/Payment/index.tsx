@@ -187,7 +187,7 @@ const Payment = () => {
               <S.Row className="mid-size">
                 <div>
                   <label htmlFor="expiresMonth">Mês de vencimento</label>
-                  <InputMask
+                  <input
                     name="expiresMonth"
                     id="expiresMonth"
                     type="text"
@@ -197,12 +197,11 @@ const Payment = () => {
                     className={
                       checkInputHasError("expiresMonth") ? "has-error" : ""
                     }
-                    mask="99"
                   />
                 </div>
                 <div>
                   <label htmlFor="expiresYear">Ano de vencimento</label>
-                  <InputMask
+                  <input
                     name="expiresYear"
                     id="expiresYear"
                     type="text"
@@ -212,7 +211,6 @@ const Payment = () => {
                     className={
                       checkInputHasError("expiresYear") ? "has-error" : ""
                     }
-                    mask="99"
                   />
                 </div>
               </S.Row>
