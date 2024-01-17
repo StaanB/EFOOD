@@ -9,8 +9,8 @@ import { formataPreco } from "../../utils";
 import {
   openAddress,
   closePaymemt,
-  addCardInfos,
   clear,
+  addCardInfos,
 } from "../../store/reducers/cart";
 
 import { Aside, Button, Overlay } from "../Cart/styles";
@@ -18,7 +18,7 @@ import * as S from "./styles";
 
 const Payment = () => {
   const [purchase, { isSuccess, data }] = usePurchaseMutation();
-  const { paymentOpen, items, clientAddress, clientCard } = useSelector(
+  const { paymentOpen, items, clientAddress } = useSelector(
     (state: RootReducer) => state.cart
   );
   const dispatch = useDispatch();
@@ -55,6 +55,22 @@ const Payment = () => {
       expiresYear: Yup.string().min(2).max(2).required(),
     }),
     onSubmit: (values) => {
+      purchase({
+        products: clientAddress.products,
+        delivery: clientAddress.delivery,
+        payment: {
+          card: {
+            name: values.cardName,
+            number: values.cardNumber,
+            code: Number(values.cardCode),
+            expires: {
+              month: Number(values.expiresMonth),
+              year: Number(values.expiresYear),
+            },
+          },
+        },
+      });
+
       dispatch(
         addCardInfos({
           payment: {
@@ -70,12 +86,6 @@ const Payment = () => {
           },
         })
       );
-
-      purchase({
-        products: clientAddress.products,
-        delivery: clientAddress.delivery,
-        payment: clientCard.payment,
-      });
     },
   });
 

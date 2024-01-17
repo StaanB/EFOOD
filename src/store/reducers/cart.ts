@@ -132,11 +132,9 @@ const cartSlice = createSlice({
 
     addAddressInfos: (state, action: PayloadAction<clientAddres>) => {
       state.clientAddress = action.payload;
-      console.log(state.clientAddress);
     },
     addCardInfos: (state, action: PayloadAction<clientCard>) => {
       state.clientCard = action.payload;
-      console.log(state.clientCard);
     },
   },
 });
