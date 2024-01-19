@@ -47,10 +47,13 @@ export const Row = styled.div`
 
   input {
     height: 32px;
-    background-color: ${cores.bege};
-    color: black;
-    border: 2px solid ${cores.bege};
     margin-bottom: 8px;
+
+    font-weight: bold;
+    color: black;
+    
+    border: 2px solid ${cores.bege};
+    background-color: ${cores.bege};
   }
 
   &.mid-size {
